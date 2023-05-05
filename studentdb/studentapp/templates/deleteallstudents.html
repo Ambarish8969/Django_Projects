@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete All Students</title>
+</head>
+<body>
+    <h1>Delete All Students</h1>
+    <form method="POST">
+      {% csrf_token %}
+      <p>Are you sure you want to delete all students?</p>
+      <button type="submit">Yes, delete all students</button>
+    </form>
+    <a href="{% url 'studentlist' %}">Back to List</a>
+</body>
+</html>

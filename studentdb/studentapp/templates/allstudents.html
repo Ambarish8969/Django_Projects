@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Students</title>
+</head>
+<body>
+    <button><a href="{% url 'add-student' %}">Add Student</a></button> <br> <br>
+    <button><a href="{% url 'delete-all-students' %}">Delete All Students</a></button> <br><br>
+    <table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Marks </th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for student in students %}
+			<tr>
+				<td>{{ student.id }}</td>
+				<td>{{ student.Name }}</td>
+				<td>{{ student.Age }}</td>
+				<td>{{ student.Marks }}</td>
+                <td><button><a href="{% url 'update-student' id=student.id %}">Edit</a></button></td>
+                <td><button><a href="{% url 'delete-student' id=student.id %}">Delete</a></button></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
