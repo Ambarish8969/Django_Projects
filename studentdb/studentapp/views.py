@@ -16,7 +16,7 @@ def addStudent(request):
         form=StudentForm(request.POST) # It is taking the data from the form and creating the object of Student.
         if form.is_valid():
             student=form.save(commit=False) 
-            # Default value of commit is "True".
+            # Default value of commit is "222True".
             # This can be useful if you need to modify the instance or perform additional validation before saving it. 
             # Once you are done with any additional processing, you can call student(instance).save()
             student.save()
